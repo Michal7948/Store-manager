@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Store.css">
+    <link rel="shortcut icon" href="Icon.png" type="image/x-icon">
+    <title>Store</title>
+</head>
+
+<body onload="init()">
+    <header>
+        <h1>Manager</h1>
+    </header>
+
+    <div class="allProducts">
+        <div id="products"></div>
+        <div class="manager">
+            
+
+            <button id="Aopen" onclick="manager.open()">Add product</button>
+            <div id="addP">
+                <h3>Add product</h3>
+                <label for="name">Name:</label>
+                <input class="input" type="text" name="name" id="name"><br>
+                <label for="id">Id:</label>
+                <input class="input" type="text" name="id" id="id"><br>
+                <label for="category">Category:</label>
+                <input class="input" type="text" name="category" id="category"><br>
+                <label for="price">Price:</label>
+                <input class="input" type="text" name="price" id="price"><br>
+                <label for="unitsInStock">Units in stock:</label>
+                <input class="input" type="number" name="unitsInStock" id="unitsInStock"><br>
+                <button onclick="manager.addProduct()">Add</button>
+            </div>
+            <button id="Dopen" onclick="manager.openD()">Delete product</button>
+            <div id="deleteP">
+                <label for="idD">Please enter the product ID to remove it:</label>
+                <input class="input" type="number" name="idD" id="inputDelete">
+                <button onclick="manager.deleteProduct()">Delete</button>
+            </div>
+            <button id="Eopen" onclick="manager.openId()">Edit product</button>
+            
+            <div id="enterId">
+                <label for="idE">Please enter the product ID to edit it:</label>
+                <input class="input" type="number" name="idE" id="inputEdit">
+                <button onclick="manager.editProduct()">Save</button>
+            </div>
+            <div id="editP">
+                <h3>Edit product</h3>
+                <label for="name">Name:</label>
+                <input class="input" type="text" name="name" id="nameE"><br>
+                <label for="id">Id:</label>
+                <input class="input" type="text" name="id" id="idE"><br>
+                <label for="category">Category:</label>
+                <input class="input" type="text" name="category" id="categoryE"><br>
+                <label for="price">Price:</label>
+                <input class="input" type="text" name="price" id="priceE"><br>
+                <label for="unitsInStock">Units in stock:</label>
+                <input class="input" type="number" name="unitsInStock" id="unitsInStockE"><br>
+                <button onclick="manager.editProductSave()">Edit</button>
+            </div>
+
+
+            <button id="Sopen" onclick="manager.openIdP()">Add/Delete stock</button>            
+            <div id="enterIdP">
+                <label for="idS">Please enter the product ID to add / remove from stock:</label>
+                <input class="input" type="number" name="idS" id="inputstock">
+                <button onclick="manager.stockProduct()">Save</button>
+            </div>
+            <div id="stockP">
+                <h3>Add/Delete stock</h3>
+                <input class="input" type="number" name="ADStock" id="ADStock"><br>
+                <button onclick="manager.addStock()">Add  to stock</button>
+                <button onclick="manager.deleteStock()">Delete from stock</button>
+            </div>
+
+            <button id="Uopen" onclick="manager.openIdUP()">Update price</button>
+            
+            <div id="enterIdUP">
+                <label for="idU">Please enter the product ID to update the price:</label>
+                <input class="input" type="number" name="idU" id="inputPrice-id">
+                <button onclick="manager.updateP()">Save</button>
+            </div>
+            <div id="updateP">
+                <h3>Update price</h3>
+                <label for="updatePrice">update the price:</label>
+                <input class="input" type="number" name="updatePrice" id="updatePrice"><br>
+                <button onclick="manager.updatePrice()">save</button>
+            </div>
+
+
+        </div>
+        <div class="search">
+            <h2>Search by:</h2>
+            <button onclick="cancelSearch()">Cancel all</button>
+            <div>
+                <h5>product name:</h5>
+                <input type="text" id="SearchByName">
+                <button onclick="SearchName()">Search</button>
+            </div>
+            <div>
+                <label for="category">
+                    <h5>Choose a category:</h5>
+                </label>
+                <select name="category" id="category">
+                    <option value="all"></option>
+                    <option value="food">Food</option>
+                    <option value="furniture">Furniture</option>
+                    <option value="Clothing">Clothing</option>
+                    <option value="stationery">Stationery</option>
+                    <option value="jewelry">jewelry</option>
+                    <option value="Electronics">Electronics</option>
+                </select>
+                <button onclick="SearchCategory()">Search</button>
+            </div>
+            <div>
+                <h5>price:</h5>
+                <input type="number" name="min" id="min" placeholder="min">
+                <input type="number" name="max" id="max" placeholder="max">
+                <button onclick="SearchPrice()">Search</button>
+            </div>
+            <div>
+                <h5>out of stock:</h5>
+                <button onclick="outStock()">Search</button>
+                <h5>Close to out of stock:</h5>
+                <button onclick="closeOutStock()">Search</button>
+            </div>
+
+
+        </div>
+    </div>
+<footer>© Michal  </footer>
+    <script src="Store.js"></script>
+</body>
+
+</html>
